@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import 'assignment2.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -15,8 +15,16 @@ class Homepage extends StatelessWidget {
         foregroundColor: const Color.fromARGB(255, 255, 255, 255),
         //leading: Icon(Icons.home),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+          IconButton(
+            tooltip: "Person",
+            onPressed: () {}, icon: Icon(Icons.person)),
+          IconButton(
+            tooltip: "Search",
+            onPressed: () {}, icon: Icon(Icons.search)),
+
+          IconButton(
+            tooltip: "Settings",
+            onPressed: (){}, icon: Icon(Icons.settings)),
         ],
       ),
       drawer: Drawer(
@@ -32,72 +40,73 @@ class Homepage extends StatelessWidget {
             ListTile(
               title: Text("Homepage"),
               leading: Icon(Icons.home),
-              hoverColor: const Color.fromARGB(255, 0, 6, 10),
+              hoverColor: Colors.grey,
               onTap: () {},
             ),
-            ListTile(title: Text("Person"), leading: Icon(Icons.person)),
+            ListTile(title: Text("Person"), leading: Icon(Icons.person),
+            hoverColor:Colors.grey,
+            onTap:(){},
+            
+            ),
           ],
         ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 114, 20, 131),
-                foregroundColor: Colors.white,
-                fixedSize: Size(150, 20),
-                side: BorderSide(),
-                elevation: 100,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              
+              TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.lightBlue,
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(150, 20),
+                  side: BorderSide(),
+                  elevation: 100,
+                ),
+                child: Text("Text Button"),
               ),
-              child: Text("Text Button"),
-            ),
-          ),
-          SizedBox(width: 50),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 41, 2, 48),
-                foregroundColor: Colors.white,
-                fixedSize: Size(150, 20),
-                side: BorderSide(),
-                elevation: 100,
+              SizedBox(width: 50),
+              ElevatedButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(150, 20),
+                  side: BorderSide(),
+                  elevation: 100,
+                ),
+                child: Text("ElevatedButton"),
               ),
-              child: Text("ElevatedButton"),
-            ),
-          ),
-          OutlinedButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 131, 74, 20),
-              foregroundColor: Colors.white,
-              fixedSize: Size(150, 20),
-              side: BorderSide(),
-              elevation: 100,
-            ),
-            child: Text("OutlineButton"),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 87, 20, 131),
-                foregroundColor: Colors.white,
-                fixedSize: Size(130, 20),
-                side: BorderSide(),
-                elevation: 50,
+              OutlinedButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.purple,
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(150, 20),
+                  side: BorderSide(),
+                  elevation: 100,
+                ),
+                child: Text("OutlineButton"),
               ),
-
-              icon: Icon(Icons.login),
-            ),
+              IconButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 87, 20, 131),
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(130, 20),
+                  side: BorderSide(),
+                  elevation: 50,
+                ),
+              
+                icon: Icon(Icons.login),
+              ),
+            ],
           ),
+          const assignment2(),
         ],
       ),
 
