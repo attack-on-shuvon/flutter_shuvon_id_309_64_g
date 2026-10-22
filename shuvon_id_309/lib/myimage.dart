@@ -5,6 +5,7 @@ class MyImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       'assets/images/random.jpg',
+      height: 200,
     );
   }
 }
