@@ -11,6 +11,7 @@ class Calculatorpage extends StatefulWidget{
 class _CalculatorPageState extends State<Calculatorpage>{
   TextEditingController controller1=TextEditingController();
   TextEditingController controller2 = TextEditingController();
+  TextEditingController controller3 = TextEditingController();
 
   double result = 0;
   final _formKey = GlobalKey<FormState>();
@@ -40,13 +41,60 @@ class _CalculatorPageState extends State<Calculatorpage>{
         
 
         
-
-        
-       
-        
       ),
 
       drawer: Drawer(
+        child: Column(
+          children: [
+
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.orange,
+              ),
+              child: Center(child: Text("Calculator App"),),
+              
+            ),
+            UserAccountsDrawerHeader(accountName: Text("Shuvon Rahman"),
+             accountEmail: Text("Shuvon@gmail.com"),
+             decoration: BoxDecoration(
+              color: Colors.orange,
+             ),
+             ),
+
+             ListTile(
+              title: Text("Home"),
+              leading: Icon(Icons.home),
+              onTap: (){
+                Navigator.pop(context);
+              },
+             ),
+
+             ListTile(
+              title: Text("My profile"),
+              leading: Icon(Icons.person),
+              onTap: (){
+                Navigator.pop(context);
+              },
+             ),
+             ListTile(
+              title: Text("About Info"),
+              leading: Icon(Icons.info),
+              onTap: (){
+                Navigator.pop(context);
+              },
+             ),
+             ListTile(
+              title: Text("Exit"),
+              leading: Icon(Icons.exit_to_app),
+              onTap: (){
+                Navigator.pop(context);
+              },
+             ),
+
+ 
+          ],
+        ),
+
         
       ),
 
@@ -91,7 +139,7 @@ class _CalculatorPageState extends State<Calculatorpage>{
                  ),
                  SizedBox(height:20),
 
-                 InputField(controller: controller2,
+                 InputField(controller: controller3,
                keyboardType: TextInputType.numberWithOptions(decimal: true),
                labelText: "Number 3",
                 hintText: "Enter the third number",
@@ -112,8 +160,9 @@ class _CalculatorPageState extends State<Calculatorpage>{
                   if(_formKey.currentState!.validate()){
                     String num1=controller1.text;
                     String num2 = controller2.text;
+                    String num3= controller3.text;
                     result = double.parse(num1)+
-                    double.parse(num2);
+                    double.parse(num2)+double.parse(num3);
 
                     setState(() {
                       
