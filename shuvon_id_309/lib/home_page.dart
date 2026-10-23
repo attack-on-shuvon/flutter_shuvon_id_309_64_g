@@ -51,63 +51,86 @@ class Homepage extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.lightBlue,
+                    foregroundColor: Colors.white,
+                    fixedSize: Size(150, 20),
+                    side: BorderSide(),
+                    elevation: 100,
+                  ),
+                  child: Text("Text Button"),
+                ),
+                SizedBox(width: 50),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    foregroundColor: Colors.white,
+                    fixedSize: Size(150, 20),
+                    side: BorderSide(),
+                    elevation: 100,
+                  ),
+                  child: Text("ElevatedButton"),
+                ),
+                OutlinedButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    foregroundColor: Colors.white,
+                    fixedSize: Size(150, 20),
+                    side: BorderSide(),
+                    elevation: 100,
+                  ),
+                  child: Text("OutlineButton"),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 87, 20, 131),
+                    foregroundColor: Colors.white,
+                    fixedSize: Size(130, 20),
+                    side: BorderSide(),
+                    elevation: 50,
+                  ),
+                
+                  icon: Icon(Icons.login),
+                ),
+              ],
+            ),
+            const assignment2(),
+            SizedBox(
+              height: 400,
+              width: 400,
+              child: Card(
+                margin: EdgeInsets.all(12),
+        
+                color: Colors.green,
+                shadowColor: Colors.red,
+                elevation: 30,
+        
+                child: Image.asset('assets/images/random.jpg'),
+              ),
+        
               
-              TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.lightBlue,
-                  foregroundColor: Colors.white,
-                  fixedSize: Size(150, 20),
-                  side: BorderSide(),
-                  elevation: 100,
-                ),
-                child: Text("Text Button"),
-              ),
-              SizedBox(width: 50),
-              ElevatedButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  foregroundColor: Colors.white,
-                  fixedSize: Size(150, 20),
-                  side: BorderSide(),
-                  elevation: 100,
-                ),
-                child: Text("ElevatedButton"),
-              ),
-              OutlinedButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.purple,
-                  foregroundColor: Colors.white,
-                  fixedSize: Size(150, 20),
-                  side: BorderSide(),
-                  elevation: 100,
-                ),
-                child: Text("OutlineButton"),
-              ),
-              IconButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 87, 20, 131),
-                  foregroundColor: Colors.white,
-                  fixedSize: Size(130, 20),
-                  side: BorderSide(),
-                  elevation: 50,
-                ),
+        
+            
+        
+        
               
-                icon: Icon(Icons.login),
-              ),
-            ],
-          ),
-          const assignment2(),
-        ],
+            )
+          
+          ],
+        ),
       ),
 
       floatingActionButton: FloatingActionButton(
