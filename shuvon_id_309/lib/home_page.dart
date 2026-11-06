@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuvon_id_309/CalculatorPage.dart';
 
 import 'assignment2.dart';
 
@@ -48,6 +49,17 @@ class Homepage extends StatelessWidget {
             onTap:(){},
             
             ),
+            ListTile(
+              
+              title: Text("Calculator"),
+              leading: Icon(Icons.home),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Calculatorpage()));
+              },
+
+            ),
+
           ],
         ),
       ),
@@ -60,7 +72,9 @@ class Homepage extends StatelessWidget {
               children: [
                 
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Calculatorpage()));
+                  },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.lightBlue,
                     foregroundColor: Colors.white,
@@ -68,7 +82,7 @@ class Homepage extends StatelessWidget {
                     side: BorderSide(),
                     elevation: 100,
                   ),
-                  child: Text("Text Button"),
+                  child: Text("Calculator"),
                 ),
                 SizedBox(width: 50),
                 ElevatedButton(
